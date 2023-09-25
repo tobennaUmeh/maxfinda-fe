@@ -1,12 +1,20 @@
-import {ActionTypeUtil} from "../../util/ActionTypeUtil.ts";
-import {LoginView} from "../../view/auth/LoginView.tsx";
+import { ActionTypeUtil } from "../../util/ActionTypeUtil.ts";
+import { LoginView } from "../../view/auth/LoginView.tsx";
 
-export const authRoute = [
-    {
-        name: ActionTypeUtil.routes.auth.login,
-        component: LoginView,
-        path: "/",
-        meta: {},
-        options: {},
-    }
-]
+interface authRouteType {
+  name: string;
+  component: () => JSX.Element;
+  path: string;
+  meta: object;
+  options: object;
+}
+
+export const authRoute: authRouteType[] = [
+  {
+    name: ActionTypeUtil.routes.AUTH.LOGIN,
+    component: LoginView,
+    path: "/",
+    meta: {},
+    options: {},
+  },
+];
