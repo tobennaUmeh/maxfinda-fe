@@ -1,19 +1,10 @@
-import React from "react";
 import { ActionTypeUtil } from "../../util/ActionTypeUtil";
 import Dashboard from "../../view/dashboard/Dashdoard";
 import Admin from "../../view/admin/Admin";
 import Settings from "../../view/settings/Settings";
 import Posts from "../../view/posts/Posts";
-import Error404 from "../../view/error/Error404";
-
-export type BaseRoute = {
-  name?: string;
-  component: React.ComponentType | React.FC;
-  path: string;
-  meta: object;
-  options: object;
-  isAuthenticated: boolean;
-};
+import Errorpage from "../../view/error/Errorpage";
+import { BaseRoute } from "../../types/routes.type";
 
 export const baseRoute: BaseRoute[] = [
   {
@@ -23,6 +14,7 @@ export const baseRoute: BaseRoute[] = [
     meta: {},
     options: {},
     isAuthenticated: true,
+    hasSidebar: true,
   },
   {
     name: ActionTypeUtil.routes.ADMIN.ADMIN,
@@ -31,6 +23,7 @@ export const baseRoute: BaseRoute[] = [
     meta: {},
     options: {},
     isAuthenticated: true,
+    hasSidebar: true,
   },
   {
     name: ActionTypeUtil.routes.SETTINGS.SETTING,
@@ -39,6 +32,7 @@ export const baseRoute: BaseRoute[] = [
     meta: {},
     options: {},
     isAuthenticated: true,
+    hasSidebar: true,
   },
   {
     name: ActionTypeUtil.routes.POSTS.POSTS,
@@ -47,13 +41,15 @@ export const baseRoute: BaseRoute[] = [
     meta: {},
     options: {},
     isAuthenticated: true,
+    hasSidebar: true,
   },
   {
     name: ActionTypeUtil.routes.ERROR.ERROR,
-    component: Error404,
+    component: Errorpage,
     path: "*",
     meta: {},
     options: {},
     isAuthenticated: false,
+    hasSidebar: false,
   },
 ];

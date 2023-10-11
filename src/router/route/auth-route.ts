@@ -1,13 +1,9 @@
+import { authRouteType } from "../../types/routes.type.ts";
 import { ActionTypeUtil } from "../../util/ActionTypeUtil.ts";
+import { ChangePassword } from "../../view/auth/ChangePassword.tsx";
+import { ForgotPassword } from "../../view/auth/ForgotPassword.tsx";
 import { LoginView } from "../../view/auth/LoginView.tsx";
-
-interface authRouteType {
-  name: string;
-  component: () => JSX.Element;
-  path: "/" | "login";
-  meta: object;
-  options: object;
-}
+import { OTP } from "../../view/auth/OTP.tsx";
 
 export const authRoute: authRouteType[] = [
   {
@@ -16,6 +12,8 @@ export const authRoute: authRouteType[] = [
     path: "/",
     meta: {},
     options: {},
+    isAuthenticated: false,
+    hasSidebar: false,
   },
   {
     name: ActionTypeUtil.routes.AUTH.LOGIN,
@@ -23,5 +21,34 @@ export const authRoute: authRouteType[] = [
     path: "login",
     meta: {},
     options: {},
+    isAuthenticated: false,
+    hasSidebar: false,
+  },
+  {
+    name: ActionTypeUtil.routes.AUTH.FORGOTPASSWORD,
+    component: ForgotPassword,
+    path: "forgot-password",
+    meta: {},
+    options: {},
+    isAuthenticated: false,
+    hasSidebar: false,
+  },
+  {
+    name: ActionTypeUtil.routes.AUTH.CHANGEPASSWORD,
+    component: ChangePassword,
+    path: "change-password",
+    meta: {},
+    options: {},
+    isAuthenticated: false,
+    hasSidebar: false,
+  },
+  {
+    name: ActionTypeUtil.routes.AUTH.OTP,
+    component: OTP,
+    path: "otp",
+    meta: {},
+    options: {},
+    isAuthenticated: false,
+    hasSidebar: false,
   },
 ];

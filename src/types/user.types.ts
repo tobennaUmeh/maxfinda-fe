@@ -69,12 +69,14 @@ export interface CreateAdmin
 export interface AdminLogin
   extends Pick<Forms, "userID" | "username" | "password"> {}
 
-type imgType = HTMLInputElement | string | File;
+type imgType = HTMLInputElement | string | HTMLImageElement;
 
 type Cards = {
   firstName: string;
   lastName: string;
   img: imgType;
+  email: string;
+  phoneNo: string;
 };
 
 export interface ContactCardType extends Cards {}

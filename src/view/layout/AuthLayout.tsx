@@ -1,33 +1,21 @@
 import React from "react";
 
-
 interface AuthLayoutProps {
-    children?: React.JSX.Element
+  children?: React.ReactNode;
+  icon?: HTMLImageElement;
 }
-export const AuthLayout = ({children}: AuthLayoutProps) => {
-  return(
-      <div
-        className={"w-full hv bg-onboarding bg-contain pt-10 pl-10 "}
-      >
-          <img src={"src/assets/image/logo.svg"}  alt={"logo"}/>
-          <div
-            className={" w-1/2 m-auto mt-20 h-[80%] flex justify-center pt-10"}
-          >
-              <div
-                className={"text-center w-1/2"}
-              >
-                  <h2
-                      className={"font-medium text-[48px] leading-[65px]"}
-                  >Welcome back!</h2>
 
-                  <h2
-                      className={"font-bold text-[28px] leading-[25px] text-[#7A7A7A]"}
-                  >Login to your account</h2>
-
-                  {children}
-
-              </div>
+export const AuthLayout = ({ children, icon }: AuthLayoutProps) => {
+  return (
+    <div className="w-full bg-white bg-contain flex h-[100vh]">
+      <div className="w-1/2 m-auto mt-20 h-[100%] pt-10">
+        <div className="w-[80%]">
+          {children} {/* Render children as ReactNode */}
         </div>
       </div>
-  )
-}
+      <div className="w-[35%] grid items-center justify-center bg-login-100">
+        {icon && <img src={icon.src} alt="Icon" />}
+      </div>
+    </div>
+  );
+};
