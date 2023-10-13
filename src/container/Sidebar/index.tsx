@@ -15,10 +15,10 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = () => {
   const activeClass =
-    "text-sidebar-active px-3 hover:bg-slate-200 space-x-1 flex border-l-sidebar-active border-l-4 py-3";
+    "text-sidebar-active px-3 hover:bg-slate-100 space-x-1 flex border-l-sidebar-active border-l-4 py-3";
 
   const normalClass =
-    "text-highlight-100 flex px-3 hover:bg-slate-200 space-x-1 border-l-4 border-slate-200 py-3";
+    "text-highlight-100 flex px-3 hover:bg-slate-100 space-x-1 border-l-4 border-slate-200 py-3";
 
   const location = useLocation();
   console.log(location);
@@ -29,7 +29,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
   };
 
   return (
-    <div className="w-[20vw] grid grid-cols-1 space-2 grid-rows-6 h-[100vh]  bg-sidebar shadow-black drop-shadow-2xl overflow-y-clip sticky top-0">
+    <div className="w-[20vw] grid grid-cols-1 space-2 grid-rows-6 h-[100vh] bg-sidebar shadow-black drop-shadow-2xl overflow-y-clip sticky top-0">
       <div className="row-span-1 grid justify-center mt-10">
         <img src={Logo} className="w-[10rem]" alt="" />
         <p className="text-highlight-100 text-sm">
