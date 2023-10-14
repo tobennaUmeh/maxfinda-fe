@@ -5,6 +5,7 @@ import GridContainer from "../../components/container/GridContainer";
 import GridSpan from "../../components/container/GridSpan";
 import Cards from "./components/Cards";
 import PostSection from "./components/PostSection";
+import Contacts from "./components/Contacts";
 
 const Dashboard: React.FC = () => {
   return (
@@ -16,12 +17,7 @@ const Dashboard: React.FC = () => {
           <PostSection />
         </GridSpan>
         <GridSpan spanWidth={3}>
-          <div className="">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi quos
-            tempora fugiat harum illo qui sunt iure similique cupiditate dolores
-            deleniti, voluptatem, exercitationem distinctio quas voluptatibus
-            nam unde ipsam eligendi!
-          </div>
+          <Contacts />
         </GridSpan>
       </GridContainer>
     </DefaultPage>
